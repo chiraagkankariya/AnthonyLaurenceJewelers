@@ -53,7 +53,7 @@ export default function ShopByCategory() {
             <Link
               key={cat.href}
               href={cat.href}
-              className="group relative aspect-square overflow-hidden block transition-shadow duration-300 hover:shadow-xl"
+              className="group relative aspect-square overflow-hidden block transition-shadow duration-300 hover:shadow-xl bg-[#F0F0F0]"
             >
               {/* Background — full-bleed image */}
               <Image
