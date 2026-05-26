@@ -1,14 +1,32 @@
+import Hero from '@/components/home/Hero'
+import FeaturedProducts from '@/components/home/FeaturedProducts'
+import ShopByCategory from '@/components/home/ShopByCategory'
+import ServicesSection from '@/components/home/ServicesSection'
+import AboutSnippet from '@/components/home/AboutSnippet'
+import GoogleReviews from '@/components/home/GoogleReviews'
+import ConsultationBanner from '@/components/home/ConsultationBanner'
+import FadeInSection from '@/components/ui/FadeInSection'
+
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-white">
-      <div className="text-center">
-        <h1 className="font-serif text-4xl font-light text-brand-charcoal">
-          Anthony Laurence Jewelers
-        </h1>
-        <p className="mt-4 font-serif text-lg text-brand-gold tracking-widest uppercase">
-          Made to Be Remembered.
-        </p>
-      </div>
-    </main>
+    <>
+      <Hero />
+      <FadeInSection>
+        <FeaturedProducts />
+      </FadeInSection>
+      <FadeInSection>
+        <ShopByCategory />
+      </FadeInSection>
+      <FadeInSection>
+        <ServicesSection />
+      </FadeInSection>
+      <FadeInSection>
+        <AboutSnippet />
+      </FadeInSection>
+      <FadeInSection>
+        <GoogleReviews />
+      </FadeInSection>
+      <ConsultationBanner />
+    </>
   )
 }

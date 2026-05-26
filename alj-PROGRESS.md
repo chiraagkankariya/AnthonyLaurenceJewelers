@@ -40,15 +40,15 @@
 ---
 
 ## Phase 4 — Homepage
-- [ ] Build `Hero.tsx` — full screen image, tagline, CTA
-- [ ] Build `FeaturedProducts.tsx` — pulls featured products from Sanity
-- [ ] Build `ShopByCategory.tsx` — 4 category tiles
-- [ ] Build `ServicesSection.tsx` — Custom, Appraisals, Repairs cards
-- [ ] Build `AboutSnippet.tsx` — brand statement + Learn More
-- [ ] Build `GoogleReviews.tsx` — Google reviews display
-- [ ] Build `ConsultationBanner.tsx` — full width CTA banner
-- [ ] Assemble homepage (`/app/page.tsx`)
-- [ ] Add scroll fade-in animations (subtle only)
+- [x] Build `Hero.tsx` — full screen image, tagline, CTA
+- [x] Build `FeaturedProducts.tsx` — pulls featured products from Sanity
+- [x] Build `ShopByCategory.tsx` — 4 category tiles
+- [x] Build `ServicesSection.tsx` — Custom, Appraisals, Repairs cards
+- [x] Build `AboutSnippet.tsx` — brand statement + Learn More
+- [x] Build `GoogleReviews.tsx` — Google reviews display (placeholder reviews — replace with live Google Places API data later)
+- [x] Build `ConsultationBanner.tsx` — full width CTA banner
+- [x] Assemble homepage (`/app/page.tsx`)
+- [x] Add scroll fade-in animations (subtle only)
 
 ---
 
