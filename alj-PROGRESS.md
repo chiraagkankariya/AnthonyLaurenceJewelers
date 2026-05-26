@@ -5,16 +5,16 @@
 ---
 
 ## Phase 1 — Project Setup
-- [ ] Initialize Next.js 14 project with TypeScript and Tailwind CSS
-- [ ] Install dependencies: `@sanity/client`, `next-sanity`, `stripe`, `@stripe/stripe-js`
-- [ ] Set up `.env.local` with all environment variables (see CLAUDE.md)
-- [ ] Create Sanity project at sanity.io and get project ID
-- [ ] Configure Sanity Studio in `/sanity` directory
-- [ ] Create product schema in Sanity (see SCHEMA.md)
-- [ ] Set up Calendly account and connect to Google Calendar
-- [ ] Upload logo to `/public/logo.png`
-- [ ] Configure Tailwind with brand colors and Cormorant Garamond font
-- [ ] Deploy to Vercel and connect domain anthonylaurencejewelry.com
+- [x] Initialize Next.js 14 project with TypeScript and Tailwind CSS
+- [x] Install dependencies: `@sanity/client`, `next-sanity`, `stripe`, `@stripe/stripe-js`
+- [x] Set up `.env.local` with all environment variables (see CLAUDE.md)
+- [ ] Create Sanity project at sanity.io and get project ID ← **OWNER ACTION REQUIRED**
+- [x] Configure Sanity Studio in `/sanity` directory
+- [x] Create product schema in Sanity (see SCHEMA.md)
+- [ ] Set up Calendly account and connect to Google Calendar ← **OWNER ACTION REQUIRED**
+- [ ] Upload logo to `/public/logo.png` ← **OWNER ACTION REQUIRED**
+- [x] Configure Tailwind with brand colors and Cormorant Garamond font
+- [ ] Deploy to Vercel and connect domain anthonylaurencejewelry.com ← **AFTER OWNER ACTIONS**
 
 ---
 
