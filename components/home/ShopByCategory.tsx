@@ -6,7 +6,7 @@ const categories = [
     label: 'Rings',
     href: '/shop/rings',
     description: 'Engagement, wedding & fashion rings',
-    iconSrc: null,
+    iconSrc: '/category-rings.svg',
   },
   {
     label: 'Necklaces',
@@ -24,26 +24,9 @@ const categories = [
     label: 'Bracelets',
     href: '/shop/bracelets',
     description: 'Tennis bracelets & more',
-    iconSrc: null,
+    iconSrc: '/category-bracelet.svg',
   },
 ]
-
-// Placeholder SVG icons for categories without an uploaded image file
-const placeholderIcons: Record<string, React.ReactNode> = {
-  Rings: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-24 h-24" stroke="currentColor">
-      <circle cx="32" cy="36" r="18" strokeWidth="1.5" />
-      <path d="M24 36 C24 28 40 28 40 36" strokeWidth="1.5" strokeLinecap="round" />
-      <ellipse cx="32" cy="18" rx="5" ry="7" strokeWidth="1.2" />
-    </svg>
-  ),
-  Bracelets: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-24 h-24" stroke="currentColor">
-      <path d="M12 32 Q12 14 32 14 Q52 14 52 32 Q52 50 32 50 Q12 50 12 32" strokeWidth="1.5" />
-      <circle cx="32" cy="14" r="4" strokeWidth="1.2" />
-    </svg>
-  ),
-}
 
 export default function ShopByCategory() {
   return (
@@ -72,22 +55,14 @@ export default function ShopByCategory() {
               href={cat.href}
               className="group relative aspect-square overflow-hidden block transition-shadow duration-300 hover:shadow-xl"
             >
-              {/* Background — full-bleed image or placeholder */}
-              {cat.iconSrc ? (
-                <Image
-                  src={cat.iconSrc}
-                  alt={cat.label}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 320px"
-                />
-              ) : (
-                <div className="absolute inset-0 bg-white flex items-center justify-center">
-                  <div className="text-brand-charcoal/20 transition-colors duration-300 group-hover:text-brand-charcoal/30">
-                    {placeholderIcons[cat.label]}
-                  </div>
-                </div>
-              )}
+              {/* Background — full-bleed image */}
+              <Image
+                src={cat.iconSrc}
+                alt={cat.label}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 320px"
+              />
 
               {/* Dark gradient overlay — always present, deepens on hover */}
               <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/65 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
