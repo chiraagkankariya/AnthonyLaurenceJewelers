@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 const categories = [
@@ -6,28 +7,32 @@ const categories = [
     href: '/shop/rings',
     description: 'Engagement, wedding & fashion rings',
     accent: 'from-rose-50 to-brand-ivory',
+    iconSrc: null,
   },
   {
     label: 'Necklaces',
     href: '/shop/necklaces',
     description: 'Pendants, chains & tennis necklaces',
     accent: 'from-amber-50 to-brand-ivory',
+    iconSrc: '/category-necklace.svg',
   },
   {
     label: 'Earrings',
     href: '/shop/earrings',
     description: 'Studs, hoops & drop earrings',
     accent: 'from-brand-gray to-white',
+    iconSrc: '/category-earrings.svg',
   },
   {
     label: 'Bracelets',
     href: '/shop/bracelets',
     description: 'Tennis bracelets & more',
     accent: 'from-slate-50 to-brand-ivory',
+    iconSrc: null,
   },
 ]
 
-// Simple SVG icons per category
+// Placeholder SVG icons for categories without an uploaded image
 const icons: Record<string, React.ReactNode> = {
   Rings: (
     <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16" stroke="currentColor">
@@ -92,8 +97,20 @@ export default function ShopByCategory() {
               <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-brand-gold/30 transition-all duration-300 group-hover:w-8 group-hover:h-8" />
 
               {/* Icon */}
-              <div className="text-brand-charcoal/30 group-hover:text-brand-red/30 transition-colors duration-300 mb-4">
-                {icons[cat.label]}
+              <div className="mb-4 transition-opacity duration-300 opacity-60 group-hover:opacity-100">
+                {cat.iconSrc ? (
+                  <Image
+                    src={cat.iconSrc}
+                    alt={cat.label}
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 object-contain"
+                  />
+                ) : (
+                  <div className="text-brand-charcoal/30 group-hover:text-brand-red/30 transition-colors duration-300">
+                    {icons[cat.label]}
+                  </div>
+                )}
               </div>
 
               {/* Label */}
