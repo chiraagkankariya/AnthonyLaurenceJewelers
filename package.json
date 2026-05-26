@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "studio": "sanity dev"
+    "studio": "sanity dev",
+    "import:products": "ts-node --transpile-only scripts/importProducts.ts",
+    "create:sample": "ts-node --transpile-only scripts/createSampleSpreadsheet.ts"
   },
   "dependencies": {
     "@sanity/client": "^7.22.0",
@@ -19,7 +21,8 @@
     "react": "^18",
     "react-dom": "^18",
     "sanity": "^5.27.0",
-    "stripe": "^22.1.1"
+    "stripe": "^22.1.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -29,6 +32,7 @@
     "eslint-config-next": "14.2.35",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

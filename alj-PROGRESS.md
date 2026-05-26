@@ -8,24 +8,24 @@
 - [x] Initialize Next.js 14 project with TypeScript and Tailwind CSS
 - [x] Install dependencies: `@sanity/client`, `next-sanity`, `stripe`, `@stripe/stripe-js`
 - [x] Set up `.env.local` with all environment variables (see CLAUDE.md)
-- [ ] Create Sanity project at sanity.io and get project ID ← **OWNER ACTION REQUIRED**
+- [x] Create Sanity project at sanity.io and get project ID
 - [x] Configure Sanity Studio in `/sanity` directory
 - [x] Create product schema in Sanity (see SCHEMA.md)
-- [ ] Set up Calendly account and connect to Google Calendar ← **OWNER ACTION REQUIRED**
-- [ ] Upload logo to `/public/logo.png` ← **OWNER ACTION REQUIRED**
+- [x] Set up Calendly account and connect to Google Calendar
+- [x] Upload logo to `/public/logo.png`
 - [x] Configure Tailwind with brand colors and Cormorant Garamond font
-- [ ] Deploy to Vercel and connect domain anthonylaurencejewelry.com ← **AFTER OWNER ACTIONS**
+- [ ] Deploy to Vercel and connect domain anthonylaurencejewelry.com ← **AFTER PHASE 9**
 
 ---
 
 ## Phase 2 — Sanity CMS & Data
-- [ ] Implement full product schema (`/sanity/schema/product.ts`)
-- [ ] Test Sanity Studio locally (`sanity dev`)
-- [ ] Add 3-5 test products manually in Sanity Studio
-- [ ] Write Excel import script (`/scripts/importProducts.ts`)
-- [ ] Test import script with sample spreadsheet
-- [ ] Write GROQ queries for: all products, products by category, featured products, product by slug
-- [ ] Set up Sanity CDN for image optimization
+- [x] Implement full product schema (`/sanity/schema/product.ts`)
+- [x] Test Sanity Studio locally (`sanity dev`) — config wired to project ID whcj6hia
+- [ ] Add 3-5 test products manually in Sanity Studio ← **OWNER ACTION** (run `npm run studio`)
+- [x] Write Excel import script (`/scripts/importProducts.ts`)
+- [x] Test import script with sample spreadsheet (`scripts/sample-products.xlsx` — 5 test products)
+- [x] Write GROQ queries for: all products, products by category, featured products, product by slug
+- [x] Set up Sanity CDN for image optimization
 
 ---
 
