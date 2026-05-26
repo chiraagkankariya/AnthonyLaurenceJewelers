@@ -6,61 +6,41 @@ const categories = [
     label: 'Rings',
     href: '/shop/rings',
     description: 'Engagement, wedding & fashion rings',
-    accent: 'from-rose-50 to-brand-ivory',
     iconSrc: null,
   },
   {
     label: 'Necklaces',
     href: '/shop/necklaces',
     description: 'Pendants, chains & tennis necklaces',
-    accent: 'from-amber-50 to-brand-ivory',
     iconSrc: '/category-necklace.svg',
   },
   {
     label: 'Earrings',
     href: '/shop/earrings',
     description: 'Studs, hoops & drop earrings',
-    accent: 'from-brand-gray to-white',
     iconSrc: '/category-earrings.svg',
   },
   {
     label: 'Bracelets',
     href: '/shop/bracelets',
     description: 'Tennis bracelets & more',
-    accent: 'from-slate-50 to-brand-ivory',
     iconSrc: null,
   },
 ]
 
-// Placeholder SVG icons for categories without an uploaded image
-const icons: Record<string, React.ReactNode> = {
+// Placeholder SVG icons for categories without an uploaded image file
+const placeholderIcons: Record<string, React.ReactNode> = {
   Rings: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16" stroke="currentColor">
-      <circle cx="32" cy="36" r="18" strokeWidth="2" />
-      <path d="M24 36 C24 28 40 28 40 36" strokeWidth="2" strokeLinecap="round" />
-      <ellipse cx="32" cy="18" rx="5" ry="7" strokeWidth="1.5" />
-    </svg>
-  ),
-  Necklaces: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16" stroke="currentColor">
-      <path d="M12 16 Q32 52 52 16" strokeWidth="2" strokeLinecap="round" />
-      <ellipse cx="32" cy="50" rx="5" ry="7" strokeWidth="1.5" />
-    </svg>
-  ),
-  Earrings: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16" stroke="currentColor">
-      <circle cx="22" cy="16" r="3" strokeWidth="1.5" />
-      <path d="M22 19 L22 36" strokeWidth="2" strokeLinecap="round" />
-      <ellipse cx="22" cy="43" rx="5" ry="7" strokeWidth="1.5" />
-      <circle cx="42" cy="16" r="3" strokeWidth="1.5" />
-      <path d="M42 19 L42 36" strokeWidth="2" strokeLinecap="round" />
-      <ellipse cx="42" cy="43" rx="5" ry="7" strokeWidth="1.5" />
+    <svg viewBox="0 0 64 64" fill="none" className="w-24 h-24" stroke="currentColor">
+      <circle cx="32" cy="36" r="18" strokeWidth="1.5" />
+      <path d="M24 36 C24 28 40 28 40 36" strokeWidth="1.5" strokeLinecap="round" />
+      <ellipse cx="32" cy="18" rx="5" ry="7" strokeWidth="1.2" />
     </svg>
   ),
   Bracelets: (
-    <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16" stroke="currentColor">
-      <path d="M12 32 Q12 14 32 14 Q52 14 52 32 Q52 50 32 50 Q12 50 12 32" strokeWidth="2" />
-      <circle cx="32" cy="14" r="4" strokeWidth="1.5" />
+    <svg viewBox="0 0 64 64" fill="none" className="w-24 h-24" stroke="currentColor">
+      <path d="M12 32 Q12 14 32 14 Q52 14 52 32 Q52 50 32 50 Q12 50 12 32" strokeWidth="1.5" />
+      <circle cx="32" cy="14" r="4" strokeWidth="1.2" />
     </svg>
   ),
 }
@@ -90,41 +70,44 @@ export default function ShopByCategory() {
             <Link
               key={cat.href}
               href={cat.href}
-              className={`group relative flex flex-col items-center justify-center bg-gradient-to-br ${cat.accent} aspect-square p-8 overflow-hidden transition-shadow duration-300 hover:shadow-lg`}
+              className="group relative aspect-square overflow-hidden block transition-shadow duration-300 hover:shadow-xl"
             >
-              {/* Corner accent */}
-              <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-brand-gold/30 transition-all duration-300 group-hover:w-8 group-hover:h-8" />
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-brand-gold/30 transition-all duration-300 group-hover:w-8 group-hover:h-8" />
-
-              {/* Icon */}
-              <div className="mb-4 transition-opacity duration-300 opacity-60 group-hover:opacity-100">
-                {cat.iconSrc ? (
-                  <Image
-                    src={cat.iconSrc}
-                    alt={cat.label}
-                    width={64}
-                    height={64}
-                    className="w-16 h-16 object-contain"
-                  />
-                ) : (
-                  <div className="text-brand-charcoal/30 group-hover:text-brand-red/30 transition-colors duration-300">
-                    {icons[cat.label]}
+              {/* Background — full-bleed image or placeholder */}
+              {cat.iconSrc ? (
+                <Image
+                  src={cat.iconSrc}
+                  alt={cat.label}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 320px"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-white flex items-center justify-center">
+                  <div className="text-brand-charcoal/20 transition-colors duration-300 group-hover:text-brand-charcoal/30">
+                    {placeholderIcons[cat.label]}
                   </div>
-                )}
+                </div>
+              )}
+
+              {/* Dark gradient overlay — always present, deepens on hover */}
+              <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/65 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+
+              {/* Corner accents */}
+              <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-white/40 transition-all duration-300 group-hover:w-8 group-hover:h-8 group-hover:border-brand-gold/70 z-10" />
+              <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-white/40 transition-all duration-300 group-hover:w-8 group-hover:h-8 group-hover:border-brand-gold/70 z-10" />
+
+              {/* Text — pinned to bottom over gradient */}
+              <div className="absolute inset-x-0 bottom-0 p-5 z-10">
+                <h3 className="font-serif text-xl md:text-2xl font-light text-white leading-tight">
+                  {cat.label}
+                </h3>
+                <p className="font-serif text-xs text-white/70 mt-1 leading-relaxed hidden md:block">
+                  {cat.description}
+                </p>
+                <span className="mt-2 inline-block font-serif text-xs tracking-widest uppercase text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Explore →
+                </span>
               </div>
-
-              {/* Label */}
-              <h3 className="font-serif text-xl md:text-2xl font-light text-brand-charcoal group-hover:text-brand-red transition-colors duration-300">
-                {cat.label}
-              </h3>
-              <p className="font-serif text-xs text-gray-400 mt-2 text-center leading-relaxed hidden md:block">
-                {cat.description}
-              </p>
-
-              {/* Arrow */}
-              <span className="mt-4 font-serif text-xs tracking-widest uppercase text-brand-red opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Explore →
-              </span>
             </Link>
           ))}
         </div>
