@@ -30,12 +30,12 @@
 ---
 
 ## Phase 3 — Core Layout
-- [ ] Build `Navbar.tsx` — desktop with Shop dropdown, mobile hamburger
-- [ ] Build `Footer.tsx` — all 5 columns, return policy blurb, payment icons, copyright
-- [ ] Build `Button.tsx` UI component (primary, secondary variants)
-- [ ] Build `CartDrawer.tsx` — slides in from right, shows cart items
-- [ ] Set up cart state management (React Context or Zustand)
-- [ ] Build `CalendlyEmbed.tsx` reusable component
+- [x] Build `Navbar.tsx` — desktop with Shop dropdown, mobile hamburger
+- [x] Build `Footer.tsx` — all 5 columns, return policy blurb, payment icons, copyright
+- [x] Build `Button.tsx` UI component (primary, secondary variants)
+- [x] Build `CartDrawer.tsx` — slides in from right, shows cart items
+- [x] Set up cart state management (React Context or Zustand)
+- [x] Build `CalendlyEmbed.tsx` reusable component
 
 ---
 
