@@ -13,6 +13,21 @@ export interface CartItem {
   selectedCarat?: number
 }
 
+// Lightweight projection returned by shop listing queries
+export interface ProductListing {
+  _id: string
+  name: string
+  slug: string
+  category: string
+  subcategory?: string
+  price: number
+  salePrice?: number
+  inStock: boolean
+  images?: Array<{ asset: { _ref: string; _type: string } }>
+  metalTypes: string[]
+  stoneType?: string
+}
+
 export interface SanityProduct {
   _id: string
   name: string

@@ -53,16 +53,17 @@
 ---
 
 ## Phase 5 — Shop Pages
-- [ ] Build `ProductCard.tsx` component
-- [ ] Build `ProductGrid.tsx` component
-- [ ] Build `FilterSidebar.tsx` — all filters per SCHEMA.md
-- [ ] Build `SearchBar.tsx`
-- [ ] Build `/app/shop/page.tsx` — all products
-- [ ] Build `/app/shop/rings/page.tsx`
-- [ ] Build `/app/shop/necklaces/page.tsx`
-- [ ] Build `/app/shop/earrings/page.tsx`
-- [ ] Build `/app/shop/bracelets/page.tsx`
-- [ ] Test filters and search on all shop pages
+- [x] Build `ProductCard.tsx` component
+- [x] Build `ProductGrid.tsx` component
+- [x] Build `FilterSidebar.tsx` — all filters per SCHEMA.md
+- [x] Build `SearchBar.tsx`
+- [x] Build `SortDropdown.tsx`
+- [x] Build `/app/shop/page.tsx` — all products
+- [x] Build `/app/shop/rings/page.tsx`
+- [x] Build `/app/shop/necklaces/page.tsx`
+- [x] Build `/app/shop/earrings/page.tsx`
+- [x] Build `/app/shop/bracelets/page.tsx`
+- [ ] Test filters and search on all shop pages ← **OWNER ACTION** (add test products in Sanity first)
 
 ---
 
