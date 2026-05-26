@@ -27,11 +27,11 @@
 ## Environment Variables
 Never hardcode these. Always reference via `process.env`:
 ```
-NEXT_PUBLIC_SANITY_PROJECT_ID=YOUR_SANITY_PROJECT_ID
+NEXT_PUBLIC_SANITY_PROJECT_ID=whcj6hia
 NEXT_PUBLIC_SANITY_DATASET=production
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=YOUR_STRIPE_PUBLISHABLE_KEY
 STRIPE_SECRET_KEY=YOUR_STRIPE_SECRET_KEY
-NEXT_PUBLIC_CALENDLY_URL=YOUR_CALENDLY_URL
+NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/anthonylaurencejewlers/jewelry-consultation
 NEXT_PUBLIC_SITE_URL=https://anthonylaurencejewelry.com
 ```
 
@@ -63,7 +63,7 @@ NEXT_PUBLIC_SITE_URL=https://anthonylaurencejewelry.com
 - Jewelry photography should always be on white/cream backgrounds
 
 ### Logo
-- File: `/public/logo.png`
+- File: `/public/alj-logo.png`
 - Colors: Deep Red (`#8B0000`) + Gold (`#F5A623`)
 - Always maintain clear space around logo
 - Never stretch or recolor
