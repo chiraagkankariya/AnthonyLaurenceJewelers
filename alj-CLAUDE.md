@@ -2,7 +2,19 @@
 > This file is Claude Code's persistent memory. Read this at the start of every session before writing any code.
 
 ---
+## Execution Protocol — MANDATORY
+This is the only permitted workflow. No exceptions.
 
+BEFORE writing any code or executing any task:
+1. Classify the task — Mechanical, Simple, or Complex (see agents/THINKING_AGENT.md)
+2. Mechanical tasks → skip to execution immediately, zero thinking
+3. Simple or Complex tasks → produce execution plan first (see agents/THINKING_AGENT.md), then execute
+4. NEVER think mid-execution — all reasoning happens in the planning step only
+5. NEVER exceed 10 seconds of thinking on any single task
+6. If you catch yourself thinking during execution → stop, report, ask owner
+--- 
+
+Violating this protocol wastes tokens and is not permitted.
 ## Project Overview
 **Business:** Anthony Laurence Jewelers
 **Tagline:** "Made to Be Remembered."
@@ -132,7 +144,22 @@ NEXT_PUBLIC_SITE_URL=https://anthonylaurencejewelry.com
 ```
 
 ---
+## Guardrails — Non-Negotiable Behavior Rules
 
+1. **Bug fix attempts** — if a bug or error is not resolved after 2 attempts, stop immediately and ask the owner for direction. Do not attempt a third fix.
+
+2. **Phase summaries** — when a phase is complete, provide a standard summary: list every file created/modified with one sentence explaining what it does. Include any owner actions required.
+
+3. **Checkpoints** — when building multiple components in one phase, provide a one-line checkpoint update at each milestone (e.g. "Navbar complete, starting Footer") so the owner knows progress is on track.
+
+4. **Uncovered decisions** — if you encounter anything not explicitly covered in CLAUDE.md, PRD.md, or SCHEMA.md, stop and ask the owner before proceeding. Do not make assumptions.
+
+5. **New dependencies** — lean towards asking before installing any new package. Always ask for major packages (new frameworks, large libraries). Use judgment for small utilities but flag them in the phase summary.
+
+6. **Design decisions** — if making any design decision not explicitly covered in CLAUDE.md (spacing, animation, copy, layout), stop and ask the owner before proceeding. Do not make independent design choices.
+7. **No extended thinking for simple edits** — for str_replace tasks involving only class name changes, color swaps, or text content updates, execute immediately without thinking. These require no reasoning — just locate the string and replace it.
+
+---
 ## Coding Standards
 - Always use **TypeScript** — no `.js` files
 - Use **Tailwind CSS** for all styling — no inline styles

@@ -68,54 +68,55 @@
 ---
 
 ## Phase 6 — Product Detail Page
-- [ ] Build `ImageGallery.tsx` — main image + thumbnail row
-- [ ] Build `VariantSelector.tsx` — metal, purity, ring size, length
-- [ ] Build `CaratSelector.tsx` — only shown if caratSize ≥ 1
-- [ ] Build `PriceCalculator.tsx` — real-time price updates
-- [ ] Implement `/lib/priceCalculator.ts` with verified formula (see SCHEMA.md)
-- [ ] Build `/app/products/[slug]/page.tsx`
-- [ ] Test carat pricing with all verified examples from SCHEMA.md
-- [ ] Test variant selectors show/hide correctly per category
-- [ ] Test purity selector only shows for Yellow Gold & White Gold
+- [x] Build `ImageGallery.tsx` — main image + thumbnail row
+- [x] Build `VariantSelector.tsx` — metal, purity, ring size, length
+- [x] Build `CaratSelector.tsx` — only shown if caratSize ≥ 1
+- [x] Build `PriceCalculator.tsx` — real-time price updates
+- [x] Implement `/lib/priceCalculator.ts` with verified formula (see SCHEMA.md)
+- [x] Build `/app/products/[slug]/page.tsx`
+- [ ] Test carat pricing with all verified examples from SCHEMA.md ← **OWNER ACTION**
+- [ ] Test variant selectors show/hide correctly per category ← **OWNER ACTION**
+- [ ] Test purity selector only shows for Yellow Gold & White Gold ← **OWNER ACTION**
 
 ---
 
 ## Phase 7 — Service Pages
-- [ ] Build `/app/custom/page.tsx` — inquiry form + Calendly embed
-- [ ] Build `/app/api/contact/route.ts` — sends inquiry email
-- [ ] Build `/app/appraisals/page.tsx` — service info + Calendly embed
-- [ ] Build `/app/repairs/page.tsx` — services list + contact info
-- [ ] Build `/app/about/page.tsx` — brand story + location
+- [x] Build `/app/custom/page.tsx` — inquiry form + Calendly embed
+- [x] Build `/app/api/contact/route.ts` — sends inquiry email via Nodemailer/Gmail
+- [x] Build `/app/appraisals/page.tsx` — service info + Calendly embed
+- [x] Build `/app/repairs/page.tsx` — services list + contact info
+- [x] Build `/app/about/page.tsx` — brand story + location
 
 ---
 
 ## Phase 8 — Checkout
-- [ ] Build `/app/cart/page.tsx`
-- [ ] Build `/app/api/checkout/route.ts` — Stripe session creation
-- [ ] Configure Stripe Tax (NJ 6.625%)
-- [ ] Add shipping options: Free Shipping (signature required) + Free Local Pickup
-- [ ] Build `/app/checkout/success/page.tsx`
-- [ ] Build `/app/checkout/cancel/page.tsx`
-- [ ] Test full checkout flow end-to-end with Stripe test mode
-- [ ] Switch to Stripe live mode before launch
+- [x] Build `/app/cart/page.tsx`
+- [x] Build `/app/api/checkout/route.ts` — Stripe session creation
+- [x] Configure Stripe Tax (NJ 6.625%)
+- [x] Add shipping options: Free Shipping (signature required) + Free Local Pickup
+- [x] Build `/app/checkout/success/page.tsx`
+- [x] Build `/app/checkout/cancel/page.tsx`
+- [ ] Test full checkout flow end-to-end with Stripe test mode ← **OWNER ACTION**
+- [ ] Switch to Stripe live mode before launch ← **OWNER ACTION**
 
 ---
 
 ## Phase 9 — Polish & Launch
-- [ ] Test all pages on mobile (responsive design)
-- [ ] Test hamburger menu on mobile
-- [ ] Add SEO meta tags to all pages (title, description, og:image)
-- [ ] Add favicon using logo
-- [ ] Test all Calendly embeds
-- [ ] Test custom inquiry form submission + email delivery
-- [ ] Verify return policy is visible in footer
-- [ ] Verify "All sales final" notice on custom jewelry page
-- [ ] Performance audit (Lighthouse score target: 90+)
-- [ ] Final review of all content, prices, contact info
-- [ ] Remove Stripe test mode → switch to live keys
-- [ ] Deploy final build to Vercel
-- [ ] Point domain DNS to Vercel
-- [ ] Smoke test on live domain
+- [ ] Test all pages on mobile (responsive design) ← **OWNER ACTION**
+- [ ] Test hamburger menu on mobile ← **OWNER ACTION**
+- [x] Add SEO meta tags to all pages (title, description, og:image)
+- [x] Add favicon using logo
+- [x] Build branded 404 page (`app/not-found.tsx`)
+- [ ] Test all Calendly embeds ← **OWNER ACTION**
+- [ ] Test custom inquiry form submission + email delivery ← **OWNER ACTION**
+- [ ] Verify return policy is visible in footer ← **OWNER ACTION**
+- [ ] Verify "All sales final" notice on custom jewelry page ← **OWNER ACTION**
+- [ ] Performance audit (Lighthouse score target: 90+) ← **OWNER ACTION**
+- [ ] Final review of all content, prices, contact info ← **OWNER ACTION**
+- [ ] Remove Stripe test mode → switch to live keys ← **OWNER ACTION**
+- [ ] Deploy final build to Vercel ← **OWNER ACTION**
+- [ ] Point domain DNS to Vercel ← **OWNER ACTION**
+- [ ] Smoke test on live domain ← **OWNER ACTION**
 
 ---
 

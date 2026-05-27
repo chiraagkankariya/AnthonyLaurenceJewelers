@@ -6,25 +6,25 @@ const categories = [
     label: 'Rings',
     href: '/shop/rings',
     description: 'Engagement, wedding & fashion rings',
-    iconSrc: '/category-rings.svg',
+    iconSrc: '/catalog/category-rings.svg',
   },
   {
     label: 'Necklaces',
     href: '/shop/necklaces',
     description: 'Pendants, chains & tennis necklaces',
-    iconSrc: '/category-necklace.svg',
+    iconSrc: '/catalog/category-necklace.svg',
   },
   {
     label: 'Earrings',
     href: '/shop/earrings',
     description: 'Studs, hoops & drop earrings',
-    iconSrc: '/category-earrings.svg',
+    iconSrc: '/catalog/category-earrings.svg',
   },
   {
     label: 'Bracelets',
     href: '/shop/bracelets',
     description: 'Tennis bracelets & more',
-    iconSrc: '/category-bracelet.svg',
+    iconSrc: '/catalog/category-bracelet.svg',
   },
 ]
 

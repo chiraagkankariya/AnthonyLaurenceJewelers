@@ -9,6 +9,20 @@ export const metadata: Metadata = {
   title: 'Anthony Laurence Jewelers | Made to Be Remembered.',
   description:
     'Fine jewelry in Millburn, NJ. Engagement rings, custom jewelry, appraisals, and repairs. Visit us at 139 Millburn Ave.',
+  icons: {
+    icon: '/alj-logo.png',
+    apple: '/alj-logo.png',
+  },
+  openGraph: {
+    title: 'Anthony Laurence Jewelers | Made to Be Remembered.',
+    description:
+      'Fine jewelry in Millburn, NJ. Engagement rings, custom jewelry, appraisals, and repairs.',
+    url: 'https://anthonylaurencejewelry.com',
+    siteName: 'Anthony Laurence Jewelers',
+    images: [{ url: '/alj-logo.png', width: 800, height: 800, alt: 'Anthony Laurence Jewelers' }],
+    locale: 'en_US',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
