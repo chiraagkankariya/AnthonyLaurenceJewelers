@@ -16,6 +16,17 @@ export function urlFor(source: any) {
   return builder.image(source)
 }
 
+// Safe wrapper — returns null instead of throwing when asset ref is missing
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function getImageUrl(source: any, width: number, height: number): string | null {
+  if (!source?.asset?._ref) return null
+  try {
+    return builder.image(source).width(width).height(height).url()
+  } catch {
+    return null
+  }
+}
+
 // GROQ Queries
 export const allProductsQuery = `*[_type == "product"] | order(_createdAt desc) {
   _id,

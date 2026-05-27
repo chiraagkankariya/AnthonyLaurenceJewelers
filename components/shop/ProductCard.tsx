@@ -1,13 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { urlFor } from '@/lib/sanity'
+import { getImageUrl } from '@/lib/sanity'
 import type { ProductListing } from '@/types'
 
 export default function ProductCard({ product }: { product: ProductListing }) {
-  const imageUrl =
-    product.images && product.images.length > 0
-      ? urlFor(product.images[0]).width(600).height(600).url()
-      : null
+  const imageUrl = getImageUrl(product.images?.[0], 600, 600)
 
   return (
     <div className="group flex flex-col">
