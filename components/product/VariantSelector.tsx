@@ -14,6 +14,7 @@ const BRACELET_LENGTHS = ['6.5"', '7"', '7.5"', '8"', '8.5"']
 interface VariantSelectorProps {
   category: string
   metalTypes: string[]
+  isTwoTone?: boolean
   purities?: string[]
   ringSizes?: boolean
   necklaceLengths?: boolean
@@ -29,6 +30,7 @@ interface VariantSelectorProps {
 export default function VariantSelector({
   category,
   metalTypes,
+  isTwoTone,
   purities,
   ringSizes,
   necklaceLengths,
@@ -41,36 +43,44 @@ export default function VariantSelector({
   onSizeChange,
 }: VariantSelectorProps) {
   const showPurity =
-    ['Yellow Gold', 'White Gold'].includes(selectedMetal) && (purities?.length ?? 0) > 0
+    !isTwoTone &&
+    ['Yellow Gold', 'White Gold'].includes(selectedMetal) &&
+    (purities?.length ?? 0) > 0
   const showRingSizes = category === 'rings' && ringSizes
   const showNecklaceLengths = category === 'necklaces' && necklaceLengths
   const showBraceletLengths = category === 'bracelets' && braceletLengths
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Metal Type */}
+      {/* Metal — static label for two-tone, selectable buttons otherwise */}
       <div>
         <p className="font-serif text-xs tracking-widest uppercase text-gray-500 mb-3">
-          Metal — <span className="text-brand-charcoal">{selectedMetal}</span>
+          Metal
         </p>
-        <div className="flex flex-wrap gap-2">
-          {metalTypes.map((metal) => (
-            <button
-              key={metal}
-              onClick={() => onMetalChange(metal)}
-              className={`font-serif text-xs px-3 py-2 border transition-colors ${
-                metal === selectedMetal
-                  ? 'border-brand-charcoal bg-brand-charcoal text-white'
-                  : 'border-gray-300 text-brand-charcoal hover:border-brand-charcoal'
-              }`}
-            >
-              {metal}
-            </button>
-          ))}
-        </div>
+        {isTwoTone ? (
+          <span className="font-serif text-sm text-brand-charcoal">
+            Two-Tone (White Gold &amp; Yellow Gold)
+          </span>
+        ) : (
+          <div className="flex flex-wrap gap-2">
+            {metalTypes.map((metal) => (
+              <button
+                key={metal}
+                onClick={() => onMetalChange(metal)}
+                className={`font-serif text-xs px-3 py-2 border transition-colors ${
+                  metal === selectedMetal
+                    ? 'border-brand-charcoal bg-brand-charcoal text-white'
+                    : 'border-gray-300 text-brand-charcoal hover:border-brand-charcoal'
+                }`}
+              >
+                {metal}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Purity — only for Yellow/White Gold */}
+      {/* Purity — only for Yellow/White Gold on non-two-tone products */}
       {showPurity && (
         <div>
           <p className="font-serif text-xs tracking-widest uppercase text-gray-500 mb-3">

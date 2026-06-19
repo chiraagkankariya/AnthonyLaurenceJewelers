@@ -44,11 +44,11 @@ export default function AppraisalsPage() {
           <p className="font-serif text-sm tracking-widest uppercase text-[#F5A623] mb-2">
             Anthony Laurence Jewelers
           </p>
-          <h1 className="font-serif text-3xl sm:text-5xl font-light text-white mb-3">
+          <h1 className="font-serif text-4xl sm:text-6xl font-light text-white mb-3">
             Jewelry Appraisals
           </h1>
           <div className="w-12 h-0.5 bg-[#F5A623] mx-auto mb-5" />
-          <p className="font-serif text-lg text-white/80 max-w-xl mx-auto leading-relaxed">
+          <p className="font-serif text-xl text-white/80 max-w-xl mx-auto leading-relaxed">
             Certified appraisals for insurance, estate, and resale purposes — delivered with
             precision and professionalism.
           </p>

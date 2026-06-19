@@ -34,7 +34,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/">
               <Image
-                src="/logo.png"
+                src="/alj-logo-final1.png"
                 alt="Anthony Laurence Jewelers"
                 width={130}
                 height={38}

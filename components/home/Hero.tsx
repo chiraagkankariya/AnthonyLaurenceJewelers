@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-brand-ivory overflow-hidden">
+    <section className="relative min-h-screen flex items-start justify-center bg-brand-ivory overflow-hidden">
       {/* Subtle background texture using radial gradient */}
       <div
         className="absolute inset-0"
@@ -20,19 +20,19 @@ export default function Hero() {
       <div className="absolute bottom-12 right-12 w-16 h-16 border-b border-r border-brand-gold/40 hidden md:block" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 animate-fadeIn">
+      <div className="relative z-10 flex flex-col items-center text-center px-6 animate-fadeIn pt-20">
         {/* Logo */}
         <Image
-          src="/logo.png"
+          src="/alj-logo-final1.png"
           alt="Anthony Laurence Jewelers"
-          width={220}
-          height={64}
-          className="h-16 w-auto object-contain mb-10"
+          width={1080}
+          height={429}
+          className="h-[12vh] w-auto max-w-[90vw] object-contain mb-3"
           priority
         />
 
         {/* Divider */}
-        <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-4 mb-3">
           <div className="w-16 h-px bg-brand-gold/60" />
           <div className="w-1.5 h-1.5 rounded-full bg-brand-gold/60" />
           <div className="w-16 h-px bg-brand-gold/60" />
@@ -45,19 +45,19 @@ export default function Hero() {
           <em className="not-italic text-brand-red">Remembered.</em>
         </h1>
 
-        <p className="mt-6 font-serif text-base md:text-lg text-gray-500 font-light tracking-widest uppercase">
+        <p className="mt-2 font-serif text-base md:text-lg text-gray-500 font-light tracking-widest uppercase">
           Fine Jewelry · Millburn, New Jersey
         </p>
 
         {/* Divider */}
-        <div className="flex items-center gap-4 my-10">
+        <div className="flex items-center gap-4 my-4">
           <div className="w-16 h-px bg-brand-gold/60" />
           <div className="w-1.5 h-1.5 rounded-full bg-brand-gold/60" />
           <div className="w-16 h-px bg-brand-gold/60" />
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/shop"
             className="font-serif text-sm tracking-widest uppercase bg-brand-red text-white px-10 py-4 hover:bg-[#6B0000] transition-colors"

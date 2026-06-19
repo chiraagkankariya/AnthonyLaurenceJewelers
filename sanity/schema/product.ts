@@ -149,6 +149,14 @@ export default {
       validation: (Rule: { required: () => unknown }) => Rule.required(),
     },
     {
+      name: 'isTwoTone',
+      title: 'Two-Tone Design',
+      type: 'boolean',
+      initialValue: false,
+      description:
+        'If true, replaces the metal selector with a fixed "Two-Tone (White Gold & Yellow Gold)" label on the product page. Still list both metals in Available Metal Types for shop filtering.',
+    },
+    {
       name: 'purities',
       title: 'Available Purities (Gold only)',
       type: 'array',

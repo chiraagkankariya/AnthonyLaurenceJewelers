@@ -2,38 +2,61 @@
 
 const reviews = [
   {
-    name: 'Michael T.',
+    name: 'Hannah Moore',
     rating: 5,
-    date: 'March 2025',
-    text: "I've been coming here for over 15 years. They designed my wife's engagement ring and we couldn't be happier. The personal attention and quality of work is unmatched anywhere in New Jersey.",
+    date: 'Google Review',
+    text: "Their craftsmanship, attention to detail, and professionalism were outstanding from start to finish. They were able to correct a repair that another jeweler had mishandled, restore the ring beautifully, and make it look even better than I expected. The quality of their work was obvious the moment I saw the finished piece. It's rare to find jewelers with this level of skill and care, and I wouldn't trust an important piece of jewelry with anyone else. Highly recommended for anyone needing expert jewelry repair.",
   },
   {
-    name: 'Sarah K.',
+    name: 'Sweta',
     rating: 5,
-    date: 'January 2025',
-    text: 'Best jewelry store in New Jersey. Fair, transparent pricing and they stand behind everything they sell. Had a ring resized perfectly and a diamond reset — both came back flawless.',
+    date: 'Google Review',
+    text: "They're amazing! The sweetest people you'll find & the attention to detail is everything. Listened to everything we've wanted and went above and beyond for us. So grateful we found our forever jeweler!",
   },
   {
-    name: 'James R.',
+    name: 'Nicole',
     rating: 5,
-    date: 'November 2024',
-    text: 'Had a watch serviced and two pieces appraised. Fast turnaround, honest pricing, and the staff actually take the time to explain everything. I won\'t go anywhere else.',
+    date: 'Google Review',
+    text: "I've been coming here for years and they always do a great job! Quick service, super friendly, and will be coming back!",
   },
 ]
 
+const STAR_PATH = "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+
 function StarRating({ count }: { count: number }) {
+  const full = Math.floor(count)
+  const hasHalf = count % 1 >= 0.5
+
   return (
     <div className="flex items-center gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg
-          key={i}
-          className={`w-4 h-4 ${i < count ? 'text-brand-gold' : 'text-gray-200'}`}
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
-      ))}
+      {Array.from({ length: 5 }).map((_, i) => {
+        if (i < full) {
+          return (
+            <svg key={i} className="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path d={STAR_PATH} />
+            </svg>
+          )
+        }
+        if (i === full && hasHalf) {
+          return (
+            <span key={i} className="relative inline-block w-4 h-4">
+              <svg className="w-4 h-4 text-gray-200 absolute inset-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d={STAR_PATH} />
+              </svg>
+              <span className="absolute inset-0 overflow-hidden w-[50%]">
+                <svg className="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path d={STAR_PATH} />
+                </svg>
+              </span>
+            </span>
+          )
+        }
+        return (
+          <svg key={i} className="w-4 h-4 text-gray-200" fill="currentColor" viewBox="0 0 20 20">
+            <path d={STAR_PATH} />
+          </svg>
+        )
+      })}
     </div>
   )
 }
@@ -65,8 +88,8 @@ export default function GoogleReviews() {
             </svg>
             <span className="font-serif text-sm text-gray-500">Google Reviews</span>
             <div className="flex items-center gap-1">
-              <StarRating count={5} />
-              <span className="font-serif text-sm text-gray-500 ml-1">5.0</span>
+              <StarRating count={4.5} />
+              <span className="font-serif text-sm text-gray-500 ml-1">4.5</span>
             </div>
           </div>
         </div>
@@ -74,9 +97,9 @@ export default function GoogleReviews() {
         {/* Review cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review) => (
-            <div key={review.name} className="p-8 border border-gray-100 hover:border-brand-gold/30 transition-colors duration-300">
+            <div key={review.name} className="p-8 border border-gray-100 hover:border-brand-gold/30 transition-colors duration-300 flex flex-col">
               <StarRating count={review.rating} />
-              <blockquote className="mt-5 font-serif text-sm text-gray-600 leading-relaxed italic">
+              <blockquote className="mt-5 font-serif text-sm text-gray-600 leading-relaxed italic flex-1">
                 &ldquo;{review.text}&rdquo;
               </blockquote>
               <div className="mt-6 flex items-center justify-between">

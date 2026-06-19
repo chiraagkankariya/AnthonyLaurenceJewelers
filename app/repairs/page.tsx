@@ -17,6 +17,14 @@ const services = [
   { title: 'Rhodium Plating', body: 'Restore the bright white finish on white gold rings and jewelry.' },
 ]
 
+const jewelers = [
+  'West Orange Jewelers',
+  'Ferdinand Jewelers',
+  'Beacon Jewelers',
+  'Raspa Jewelers',
+  'Bilori Jewelers',
+]
+
 export default function RepairsPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -45,9 +53,9 @@ export default function RepairsPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        {/* Services */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      {/* Services — own container so ticker can break full-width below */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map(({ title, body }) => (
             <div key={title} className="border border-gray-100 border-l-4 border-l-[#F5A623] p-6">
               <h3 className="font-serif text-lg font-semibold text-brand-charcoal mb-2">{title}</h3>
@@ -55,7 +63,54 @@ export default function RepairsPage() {
             </div>
           ))}
         </div>
+      </div>
 
+      {/* Trusted by Jewelers — full-width ticker */}
+      <section className="mt-16 border-t border-b border-gray-100 py-10">
+        <style>{`
+          @keyframes alj-ticker {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .alj-ticker {
+            animation: alj-ticker 28s linear infinite;
+          }
+          .alj-ticker-wrap:hover .alj-ticker {
+            animation-play-state: paused;
+          }
+        `}</style>
+
+        <div className="text-center mb-8 px-4">
+          <p className="font-serif text-xs tracking-widest uppercase text-gray-400 mb-2">
+            Repair Partner Network
+          </p>
+          <h2 className="font-serif text-2xl font-light text-brand-charcoal">
+            Trusted by Jewelers Across New Jersey
+          </h2>
+          <div className="flex items-center justify-center gap-4 mt-4">
+            <div className="w-10 h-px bg-[#F5A623]/40" />
+            <div className="w-1 h-1 rounded-full bg-[#F5A623]/40" />
+            <div className="w-10 h-px bg-[#F5A623]/40" />
+          </div>
+        </div>
+
+        <div className="alj-ticker-wrap overflow-hidden">
+          {/* Items duplicated so the loop is seamless: animation runs to -50% then resets */}
+          <div className="alj-ticker flex items-center whitespace-nowrap">
+            {[...jewelers, ...jewelers].map((name, i) => (
+              <span key={i} className="inline-flex items-center">
+                <span className="font-serif text-base text-brand-charcoal/55 tracking-widest px-12">
+                  {name}
+                </span>
+                <span className="inline-block w-px h-4 bg-[#F5A623]/40 flex-shrink-0" />
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Remaining content */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         {/* Process */}
         <div className="grid grid-cols-1 lg:grid-cols-2 mb-16 overflow-hidden">
           <div className="bg-[#FFFFF0] p-10 flex flex-col justify-center">

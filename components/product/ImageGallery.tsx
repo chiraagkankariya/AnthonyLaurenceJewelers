@@ -76,6 +76,10 @@ export default function ImageGallery({ images, name }: ImageGalleryProps) {
           })}
         </div>
       )}
+
+      <p className="font-serif text-xs text-gray-400">
+        Photos may be enlarged to showcase detail. Actual size may vary.
+      </p>
     </div>
   )
 }

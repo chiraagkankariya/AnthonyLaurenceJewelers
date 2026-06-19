@@ -186,6 +186,7 @@ export const productBySlugQuery = `*[_type == "product" && slug.current == $slug
   stoneShape,
   caratSize,
   metalTypes,
+  isTwoTone,
   purities,
   ringSizes,
   necklaceLengths,

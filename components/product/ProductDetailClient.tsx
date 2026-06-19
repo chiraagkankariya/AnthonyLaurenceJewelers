@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import type { SanityProduct } from '@/types'
 import { useCart } from '@/context/CartContext'
-import { calculatePrice } from '@/lib/priceCalculator'
+import { calculatePrice, calculateBraceletPrice } from '@/lib/priceCalculator'
 import { getImageUrl } from '@/lib/sanity'
 import ImageGallery from './ImageGallery'
 import VariantSelector from './VariantSelector'
@@ -22,8 +22,9 @@ const CATEGORY_LABELS: Record<string, string> = {
 export default function ProductDetailClient({ product }: { product: SanityProduct }) {
   const { addItem, openCart } = useCart()
 
-  const isGoldFirst = ['Yellow Gold', 'White Gold'].includes(product.metalTypes?.[0] ?? '')
-  const [selectedMetal, setSelectedMetal] = useState(product.metalTypes?.[0] ?? '')
+  const initialMetal = product.metalTypes?.[0] ?? ''
+  const isGoldFirst = ['Yellow Gold', 'White Gold'].includes(initialMetal)
+  const [selectedMetal, setSelectedMetal] = useState(initialMetal)
   const [selectedPurity, setSelectedPurity] = useState(
     isGoldFirst ? (product.purities?.[0] ?? '') : ''
   )
@@ -38,9 +39,14 @@ export default function ProductDetailClient({ product }: { product: SanityProduc
     (product.braceletLengths && product.category === 'bracelets')
   )
 
-  const currentPrice = showCaratSelector
-    ? calculatePrice(product.price, product.caratSize!, selectedCarat)
-    : (product.salePrice ?? product.price)
+  const caratAdjustment = showCaratSelector
+    ? calculatePrice(product.price, product.caratSize!, selectedCarat) - product.price
+    : 0
+  const braceletAdjustment =
+    product.category === 'bracelets'
+      ? calculateBraceletPrice(product.price, parseFloat((selectedSize || '7"').replace('"', ''))) - product.price
+      : 0
+  const currentPrice = (product.salePrice ?? product.price) + caratAdjustment + braceletAdjustment
 
   const handleMetalChange = (metal: string) => {
     setSelectedMetal(metal)
@@ -142,6 +148,8 @@ export default function ProductDetailClient({ product }: { product: SanityProduc
             salePrice={product.salePrice}
             baseCaratSize={product.caratSize}
             selectedCarat={showCaratSelector ? selectedCarat : undefined}
+            category={product.category}
+            selectedSize={selectedSize}
           />
 
           {product.description && (
@@ -155,6 +163,7 @@ export default function ProductDetailClient({ product }: { product: SanityProduc
           <VariantSelector
             category={product.category}
             metalTypes={product.metalTypes ?? []}
+            isTwoTone={product.isTwoTone}
             purities={product.purities}
             ringSizes={product.ringSizes}
             necklaceLengths={product.necklaceLengths}
@@ -191,6 +200,24 @@ export default function ProductDetailClient({ product }: { product: SanityProduc
             >
               {!product.inStock ? 'Out of Stock' : addedToCart ? 'Added to Cart' : 'Add to Cart'}
             </Button>
+          </div>
+
+          {/* Custom adjustment callout */}
+          <div className="border border-gray-100 bg-[#FAFAFA] px-5 py-4 flex gap-3 items-start">
+            <svg className="w-5 h-5 flex-shrink-0 text-brand-gold mt-0.5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+            </svg>
+            <div className="flex flex-col gap-2">
+              <p className="font-serif text-sm text-gray-600 leading-relaxed">
+                Want it your way? We can adjust the metal, carat size, stones, or any other detail to your exact preference.
+              </p>
+              <a
+                href={`/custom?product=${encodeURIComponent(product.name)}`}
+                className="font-serif text-xs tracking-widest uppercase text-brand-charcoal underline underline-offset-2 hover:text-brand-gold transition-colors self-start"
+              >
+                Request a Custom Adjustment
+              </a>
+            </div>
           </div>
 
           {/* Info strip */}

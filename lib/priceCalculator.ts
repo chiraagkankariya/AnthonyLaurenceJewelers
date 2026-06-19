@@ -15,9 +15,10 @@ export function calculatePrice(
   baseCaratSize: number,
   selectedCaratSize: number
 ): number {
-  if (selectedCaratSize === baseCaratSize) return basePrice
-
   const caratDifference = selectedCaratSize - baseCaratSize
+
+  // Within ±0.05ct of base — return base price with no adjustment
+  if (Math.abs(caratDifference) <= 0.05) return basePrice
   const direction = caratDifference > 0 ? 1 : -1
   const numberOfIncrements = Math.abs(caratDifference) / 0.5
 
@@ -37,6 +38,15 @@ export function calculatePrice(
   }
 
   return basePrice + diamondAdjustment + direction * goldAdjustment
+}
+
+/**
+ * Bracelet gold-weight pricing.
+ * Base length is always 7 inches; price scales linearly with selected length.
+ * Example: $11,000 base at 8in → (11000 / 7) × 8 = $12,571.43
+ */
+export function calculateBraceletPrice(basePrice: number, selectedLength: number): number {
+  return (basePrice / 7) * selectedLength
 }
 
 /**

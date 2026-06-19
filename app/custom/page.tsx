@@ -8,7 +8,9 @@ export const metadata: Metadata = {
     'Commission a one-of-a-kind piece at Anthony Laurence Jewelers in Millburn, NJ. Submit your inquiry or book a complimentary consultation.',
 }
 
-export default function CustomPage() {
+export default function CustomPage({ searchParams }: { searchParams: { product?: string } }) {
+  const productName = searchParams.product ?? ''
+
   return (
     <div className="min-h-screen bg-white">
       <div className="border-b border-gray-100">
@@ -31,7 +33,7 @@ export default function CustomPage() {
           <h2 className="font-serif text-2xl font-light text-brand-charcoal mb-8">
             Tell Us About Your Piece
           </h2>
-          <CustomInquiryForm />
+          <CustomInquiryForm productName={productName} />
         </div>
 
         <div>

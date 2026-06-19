@@ -43,21 +43,21 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-30 bg-white transition-shadow duration-200 ${
+        className={`fixed top-0 left-0 right-0 z-30 bg-[#F0E8D8] transition-shadow duration-200 ${
           scrolled ? 'shadow-md' : 'shadow-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
 
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <Image
-                src="/logo.png"
+                src="/alj-logo-final1.png"
                 alt="Anthony Laurence Jewelers"
-                width={140}
-                height={40}
-                className="h-10 w-auto object-contain"
+                width={1080}
+                height={429}
+                className="h-8 w-auto object-contain"
                 priority
               />
             </Link>
@@ -190,10 +190,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between px-6 h-16 border-b border-gray-100">
           <Link href="/" onClick={() => setMobileOpen(false)}>
             <Image
-              src="/logo.png"
+              src="/alj-logo-final1.png"
               alt="Anthony Laurence Jewelers"
-              width={120}
-              height={36}
+              width={1080}
+              height={429}
               className="h-9 w-auto object-contain"
             />
           </Link>

@@ -2,13 +2,17 @@
 
 import { useState } from 'react'
 
-export default function CustomInquiryForm() {
+export default function CustomInquiryForm({ productName }: { productName?: string }) {
+  const initialDescription = productName
+    ? `I'm interested in customizing the ${productName}. Here's what I'd like to change: `
+    : ''
+
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
     category: '',
-    description: '',
+    description: initialDescription,
   })
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 

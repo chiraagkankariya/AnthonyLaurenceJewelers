@@ -45,6 +45,7 @@ export interface SanityProduct {
   stoneShape?: string
   caratSize?: number
   metalTypes: string[]
+  isTwoTone?: boolean
   purities?: string[]
   ringSizes?: boolean
   necklaceLengths?: boolean
