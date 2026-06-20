@@ -11,13 +11,7 @@ import VariantSelector from './VariantSelector'
 import CaratSelector from './CaratSelector'
 import PriceCalculator from './PriceCalculator'
 import Button from '@/components/ui/Button'
-
-const CATEGORY_LABELS: Record<string, string> = {
-  rings: 'Rings',
-  necklaces: 'Necklaces',
-  earrings: 'Earrings',
-  bracelets: 'Bracelets',
-}
+import { CATEGORY_LABELS } from '@/lib/constants'
 
 export default function ProductDetailClient({ product }: { product: SanityProduct }) {
   const { addItem, openCart } = useCart()

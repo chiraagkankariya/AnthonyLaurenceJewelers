@@ -66,7 +66,7 @@ export default function FilterSidebar({ showCategoryFilter = false }: FilterSide
 
   // Active category: either from URL (on /shop) or derived from pathname
   const activeCategory = current.category ||
-    (['rings', 'necklaces', 'earrings', 'bracelets'].find((c) => pathname.includes(c)) ?? '')
+    (['rings', 'necklaces', 'earrings', 'bracelets', 'chains'].find((c) => pathname.includes(c)) ?? '')
 
   const subcategoryOptions = activeCategory ? (SUBCATEGORY_OPTIONS[activeCategory] ?? []) : []
 

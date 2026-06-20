@@ -15,7 +15,7 @@ All content is managed through Sanity Studio. The owner can add, edit, and remov
 |---|---|---|---|
 | `name` | string | ✅ | Product display name |
 | `slug` | slug | ✅ | Auto-generated from name. Used in URL: `/products/[slug]` |
-| `category` | string (enum) | ✅ | `rings`, `necklaces`, `earrings`, `bracelets` |
+| `category` | string (enum) | ✅ | `rings`, `necklaces`, `chains`, `earrings`, `bracelets` |
 | `subcategory` | string (enum) | ✅ | See subcategory options below |
 | `description` | text | ✅ | Full product description |
 | `price` | number | ✅ | Base price in USD |
@@ -42,7 +42,7 @@ All content is managed through Sanity Studio. The owner can add, edit, and remov
 | `metalTypes` | array of strings | ✅ | Available metals for this product. Options: Yellow Gold, White Gold, Rose Gold, Silver, Platinum |
 | `purities` | array of strings | ❌ | Only for Yellow Gold & White Gold. Options: 10k, 14k, 18k, 22k, 24k |
 | `ringSizes` | boolean | ❌ | If true, ring size selector shown (3–13 in 0.25 increments). Only for rings. |
-| `necklaceLengths` | boolean | ❌ | If true, length selector shown (14"–24"). Only for necklaces. |
+| `necklaceLengths` | boolean | ❌ | If true, length selector shown (14"–24"). For necklaces and chains categories. |
 | `braceletLengths` | boolean | ❌ | If true, length selector shown (6.5"–8.5"). Only for bracelets. |
 
 ---
@@ -56,11 +56,17 @@ All content is managed through Sanity Studio. The owner can add, edit, and remov
 - `fashion` — Fashion Rings (includes cocktail, promise, statement)
 - `mens` — Men's Rings
 
-### Necklaces (`category: necklaces`)
+### Necklaces & Pendants (`category: necklaces`)
 - `pendant` — Pendant Necklaces
-- `chain` — Chain Necklaces
 - `locket` — Lockets
 - `tennis` — Tennis Necklaces
+
+### Chains (`category: chains`)
+- `cuban` — Cuban Link
+- `rope` — Rope Chain
+- `box` — Box Chain
+- `figaro` — Figaro Chain
+- `chain` — Plain Chains
 - `mens-chain` — Men's Chains
 
 ### Earrings (`category: earrings`)
@@ -204,7 +210,7 @@ For bulk product uploads, the spreadsheet should have these columns:
 | Column | Notes |
 |---|---|
 | name | Product name |
-| category | rings / necklaces / earrings / bracelets |
+| category | rings / necklaces / chains / earrings / bracelets |
 | subcategory | See subcategory options above |
 | price | Number only, no $ sign |
 | salePrice | Optional |

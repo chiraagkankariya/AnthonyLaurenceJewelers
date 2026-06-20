@@ -37,7 +37,7 @@ A full-service e-commerce website for Anthony Laurence Jewelers, a local fine je
    - Each card: photo, name, base price, "View" button
 
 3. **Shop by Category**
-   - 4 category tiles: Rings, Necklaces/Chains, Earrings, Bracelets
+   - 5 category tiles: Rings, Necklaces & Pendants, Chains, Earrings, Bracelets
    - Each tile links to its respective shop subcategory page
    - Elegant hover effect (subtle zoom on image)
 
@@ -63,7 +63,8 @@ A full-service e-commerce website for Anthony Laurence Jewelers, a local fine je
 
 **`/shop`** — All products with filters
 **`/shop/rings`** — Rings only
-**`/shop/necklaces`** — Necklaces/Chains only
+**`/shop/necklaces`** — Necklaces & Pendants only (pendants, lockets, tennis necklaces)
+**`/shop/chains`** — Chains only (Cuban link, rope, box, figaro, men's chains)
 **`/shop/earrings`** — Earrings only
 **`/shop/bracelets`** — Bracelets only
 
@@ -212,7 +213,8 @@ A full-service e-commerce website for Anthony Laurence Jewelers, a local fine je
 **Shop Dropdown:**
 - All Jewelry
 - Rings
-- Necklaces/Chains
+- Necklaces & Pendants
+- Chains
 - Earrings
 - Bracelets
 
@@ -227,7 +229,7 @@ A full-service e-commerce website for Anthony Laurence Jewelers, a local fine je
 
 **Columns:**
 1. **Brand** — Logo, tagline, Instagram link
-2. **Shop** — Links to all category pages
+2. **Shop** — Links to all category pages (Rings, Necklaces & Pendants, Chains, Earrings, Bracelets)
 3. **Services** — Custom Jewelry, Appraisals, Repairs
 4. **Visit Us** — Address, hours, phone, email
 5. **Returns Policy blurb:**

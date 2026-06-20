@@ -18,6 +18,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
   necklaces: 'Necklaces / Chains',
   earrings: 'Earrings',
   bracelets: 'Bracelets',
+  chains: 'Chains',
 }
 
 export const SUBCATEGORY_OPTIONS: Record<string, { label: string; value: string }[]> = {
@@ -44,5 +45,13 @@ export const SUBCATEGORY_OPTIONS: Record<string, { label: string; value: string 
   bracelets: [
     { label: 'Tennis Bracelets', value: 'tennis' },
     { label: "Men's Bracelets", value: 'mens' },
+  ],
+  chains: [
+    { label: 'Cuban Link', value: 'cuban' },
+    { label: 'Rope', value: 'rope' },
+    { label: 'Box', value: 'box' },
+    { label: 'Figaro', value: 'figaro' },
+    { label: 'Plain Chains', value: 'chain' },
+    { label: "Men's Chains", value: 'mens-chain' },
   ],
 }

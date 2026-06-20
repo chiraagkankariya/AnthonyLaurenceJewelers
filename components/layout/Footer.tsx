@@ -4,7 +4,8 @@ import Link from 'next/link'
 const shopLinks = [
   { label: 'All Jewelry', href: '/shop' },
   { label: 'Rings', href: '/shop/rings' },
-  { label: 'Necklaces / Chains', href: '/shop/necklaces' },
+  { label: 'Necklaces & Pendants', href: '/shop/necklaces' },
+  { label: 'Chains', href: '/shop/chains' },
   { label: 'Earrings', href: '/shop/earrings' },
   { label: 'Bracelets', href: '/shop/bracelets' },
 ]

@@ -15,8 +15,8 @@ function getString(val: string | string[] | undefined): string | undefined {
 }
 
 export const metadata = {
-  title: 'Necklaces & Chains | Anthony Laurence Jewelers',
-  description: 'Shop our collection of fine necklaces and chains in gold, silver, and platinum — pendants, tennis necklaces, and more.',
+  title: 'Necklaces & Pendants | Anthony Laurence Jewelers',
+  description: 'Shop our collection of fine pendant necklaces, lockets, and tennis necklaces in gold, silver, and platinum.',
 }
 
 export default async function NecklacesPage({ searchParams }: NecklacesPageProps) {
@@ -41,7 +41,7 @@ export default async function NecklacesPage({ searchParams }: NecklacesPageProps
             Shop
           </p>
           <h1 className="font-serif text-3xl font-light text-brand-charcoal">
-            Necklaces &amp; Chains
+            Necklaces &amp; Pendants
           </h1>
         </div>
       </div>
@@ -66,7 +66,7 @@ export default async function NecklacesPage({ searchParams }: NecklacesPageProps
             <FilterSidebar />
           </Suspense>
           <main className="flex-1 min-w-0">
-            <ProductGrid products={products} emptyMessage="No necklaces found." />
+            <ProductGrid products={products} emptyMessage="No necklaces or pendants found." />
           </main>
         </div>
       </div>

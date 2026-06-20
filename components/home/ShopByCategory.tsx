@@ -26,6 +26,12 @@ const categories = [
     description: 'Tennis bracelets & more',
     iconSrc: '/catalog/category-bracelet.svg',
   },
+  {
+    label: 'Chains',
+    href: '/shop/chains',
+    description: 'Cuban link, rope, figaro & more',
+    iconSrc: '/catalog/category-chains.svg',
+  },
 ]
 
 export default function ShopByCategory() {
@@ -48,7 +54,7 @@ export default function ShopByCategory() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
           {categories.map((cat) => (
             <Link
               key={cat.href}

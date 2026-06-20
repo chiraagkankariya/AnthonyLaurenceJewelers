@@ -47,7 +47,7 @@ export default function VariantSelector({
     ['Yellow Gold', 'White Gold'].includes(selectedMetal) &&
     (purities?.length ?? 0) > 0
   const showRingSizes = category === 'rings' && ringSizes
-  const showNecklaceLengths = category === 'necklaces' && necklaceLengths
+  const showNecklaceLengths = (category === 'necklaces' || category === 'chains') && necklaceLengths
   const showBraceletLengths = category === 'bracelets' && braceletLengths
 
   return (

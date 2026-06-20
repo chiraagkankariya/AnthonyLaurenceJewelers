@@ -24,7 +24,8 @@ export default {
       options: {
         list: [
           { title: 'Rings', value: 'rings' },
-          { title: 'Necklaces', value: 'necklaces' },
+          { title: 'Necklaces & Pendants', value: 'necklaces' },
+          { title: 'Chains', value: 'chains' },
           { title: 'Earrings', value: 'earrings' },
           { title: 'Bracelets', value: 'bracelets' },
         ],
@@ -43,11 +44,16 @@ export default {
           { title: 'Eternity Bands', value: 'eternity' },
           { title: 'Fashion Rings', value: 'fashion' },
           { title: "Men's Rings", value: 'mens' },
-          // Necklaces
+          // Necklaces & Pendants
           { title: 'Pendant Necklaces', value: 'pendant' },
-          { title: 'Chain Necklaces', value: 'chain' },
           { title: 'Lockets', value: 'locket' },
           { title: 'Tennis Necklaces', value: 'tennis' },
+          // Chains
+          { title: 'Cuban Link', value: 'cuban' },
+          { title: 'Rope Chain', value: 'rope' },
+          { title: 'Box Chain', value: 'box' },
+          { title: 'Figaro Chain', value: 'figaro' },
+          { title: 'Plain Chains', value: 'chain' },
           { title: "Men's Chains", value: 'mens-chain' },
           // Earrings
           { title: 'Studs', value: 'studs' },

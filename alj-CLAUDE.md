@@ -90,7 +90,8 @@ NEXT_PUBLIC_SITE_URL=https://anthonylaurencejewelry.com
 │   ├── shop/
 │   │   ├── page.tsx              # All products
 │   │   ├── rings/page.tsx
-│   │   ├── necklaces/page.tsx
+│   │   ├── necklaces/page.tsx    # Necklaces & Pendants
+│   │   ├── chains/page.tsx       # Chains (own category)
 │   │   ├── earrings/page.tsx
 │   │   └── bracelets/page.tsx
 │   ├── products/[slug]/page.tsx  # Product detail
@@ -203,7 +204,7 @@ NEXT_PUBLIC_SITE_URL=https://anthonylaurencejewelry.com
 - **Metal type:** Yellow Gold, White Gold, Rose Gold, Silver, Platinum
 - **Purity:** 10k, 14k, 18k, 22k, 24k — **only for Yellow Gold and White Gold**
 - **Ring sizes:** 3 to 13 in 0.25 increments (3, 3.25, 3.5... 13) — rings only
-- **Necklace lengths:** 14", 16", 18", 20", 22", 24" — necklaces/chains only
+- **Necklace lengths:** 14", 16", 18", 20", 22", 24" — necklaces and chains categories
 - **Bracelet lengths:** 6.5", 7", 7.5", 8", 8.5" — bracelets only
 - **Carat selector:** only shown if base carat ≥ 1ct
 

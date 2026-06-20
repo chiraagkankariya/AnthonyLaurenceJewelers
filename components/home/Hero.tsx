@@ -4,14 +4,19 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-start justify-center bg-brand-ivory overflow-hidden">
-      {/* Subtle background texture using radial gradient */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse at 60% 40%, #f5e6c8 0%, #FFFFF0 45%, #ffffff 100%)',
-        }}
-      />
+      {/* Background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/final-hero-test.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay so text remains readable */}
+      <div className="absolute inset-0 bg-black/45" />
 
       {/* Decorative corner lines */}
       <div className="absolute top-12 left-12 w-16 h-16 border-t border-l border-brand-gold/40 hidden md:block" />
@@ -39,13 +44,13 @@ export default function Hero() {
         </div>
 
         {/* Tagline */}
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-brand-charcoal leading-tight tracking-wide">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-white leading-tight tracking-wide">
           Made to Be
           <br />
-          <em className="not-italic text-brand-red">Remembered.</em>
+          <em className="not-italic text-brand-gold">Remembered.</em>
         </h1>
 
-        <p className="mt-2 font-serif text-base md:text-lg text-gray-500 font-light tracking-widest uppercase">
+        <p className="mt-2 font-serif text-base md:text-lg text-white/70 font-light tracking-widest uppercase">
           Fine Jewelry · Millburn, New Jersey
         </p>
 
@@ -66,7 +71,7 @@ export default function Hero() {
           </Link>
           <Link
             href="/custom"
-            className="font-serif text-sm tracking-widest uppercase border border-brand-charcoal text-brand-charcoal px-10 py-4 hover:border-brand-red hover:text-brand-red transition-colors"
+            className="font-serif text-sm tracking-widest uppercase border border-white/70 text-white px-10 py-4 hover:border-brand-gold hover:text-brand-gold transition-colors"
           >
             Design Custom
           </Link>
@@ -75,7 +80,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow">
-        <span className="font-serif text-xs tracking-widest uppercase text-gray-400">Scroll</span>
+        <span className="font-serif text-xs tracking-widest uppercase text-white/50">Scroll</span>
         <svg className="w-4 h-4 text-brand-gold/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
         </svg>
