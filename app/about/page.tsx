@@ -18,58 +18,18 @@ const differentiators = [
   {
     title: 'Custom Design',
     description: 'Bring your vision to life, from studs to fully custom chains.',
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.2}
-          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-        />
-      </svg>
-    ),
   },
   {
     title: 'Expert Repairs',
     description: 'Trusted by 10+ NJ jewelers for precision repair work.',
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.2}
-          d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
-        />
-      </svg>
-    ),
   },
   {
     title: 'Certified Appraisals',
     description: 'Insurance, estate, and resale valuations.',
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.2}
-          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-        />
-      </svg>
-    ),
   },
   {
     title: 'Natural & Lab-Grown Diamonds',
     description: 'Your choice, your budget.',
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.2}
-          d="M6 3h12l4 6-10 12L2 9l4-6z M2 9h20 M8 9l4 12 M16 9l-4 12"
-        />
-      </svg>
-    ),
   },
 ]
 
@@ -158,22 +118,23 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {differentiators.map((item) => (
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
+          {differentiators.map((item, index) => (
             <div
               key={item.title}
-              className="group flex flex-col items-center text-center p-8 border border-gray-100 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300"
+              className="flex items-start gap-6 py-10 border-t border-brand-gold/30"
             >
-              <div className="text-brand-gold/60 group-hover:text-brand-gold transition-colors duration-300 mb-6">
-                {item.icon}
+              <span className="font-serif text-4xl md:text-5xl font-light text-brand-gold leading-none shrink-0">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 className="font-serif text-2xl font-semibold text-brand-charcoal mb-3 leading-tight">
+                  {item.title}
+                </h3>
+                <p className="font-serif text-[15px] text-gray-500 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <div className="w-8 h-px bg-brand-gold/40 mb-6" />
-              <h3 className="font-serif text-xl font-light text-brand-charcoal mb-3">
-                {item.title}
-              </h3>
-              <p className="font-serif text-sm text-gray-500 leading-relaxed">
-                {item.description}
-              </p>
             </div>
           ))}
         </div>
