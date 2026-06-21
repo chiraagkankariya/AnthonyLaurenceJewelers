@@ -40,6 +40,7 @@ export async function POST(request: Request) {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
+      allow_promotion_codes: true,
       automatic_tax: { enabled: true },
       phone_number_collection: {
         enabled: true,
