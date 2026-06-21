@@ -6,13 +6,10 @@ import Footer from '@/components/layout/Footer'
 import CartDrawer from '@/components/ui/CartDrawer'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://anthonylaurencejewelry.com'),
   title: 'Anthony Laurence Jewelers | Made to Be Remembered.',
   description:
     'Fine jewelry in Millburn, NJ. Engagement rings, custom jewelry, appraisals, and repairs. Visit us at 139 Millburn Ave.',
-  icons: {
-    icon: '/alj-logo-final1.png',
-    apple: '/alj-logo-final1.png',
-  },
   openGraph: {
     title: 'Anthony Laurence Jewelers | Made to Be Remembered.',
     description:
