@@ -4,6 +4,7 @@ import { CartProvider } from '@/context/CartContext'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import CartDrawer from '@/components/ui/CartDrawer'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://anthonylaurencejewelry.com'),
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Footer />
           <CartDrawer />
         </CartProvider>
+        <Analytics />
       </body>
     </html>
   )
