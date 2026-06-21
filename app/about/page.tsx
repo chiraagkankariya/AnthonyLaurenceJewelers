@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { number: '40+', label: 'Years in Business' },
-  { number: '10+', label: 'NJ Jewelry Stores We Repair For' },
+  { number: '15+', label: 'Jewelry Stores We Repair For' },
   { number: '2', label: 'Diamond Options: Natural & Lab-Grown' },
 ]
 
@@ -98,7 +98,7 @@ export default function AboutPage() {
             <p>
               For over 40 years, Anthony Laurence Jewelers has been a trusted name in fine jewelry —
               relied upon not just by generations of customers, but by other jewelers and retailers
-              throughout New Jersey. Today, more than 10 jewelry stores across the state turn to us
+              throughout New Jersey. Today, more than <span className="font-sans text-gray-600 text-[16.5px]">10</span> jewelry stores across the state turn to us
               for expert repairs, a testament to the craftsmanship and care we bring to every piece.
             </p>
             <p>
