@@ -41,6 +41,9 @@ export async function POST(request: Request) {
       line_items: lineItems,
       mode: 'payment',
       automatic_tax: { enabled: true },
+      phone_number_collection: {
+        enabled: true,
+      },
       shipping_address_collection: { allowed_countries: ['US'] },
       shipping_options: [
         {
@@ -49,8 +52,8 @@ export async function POST(request: Request) {
             fixed_amount: { amount: 0, currency: 'usd' },
             display_name: 'Free Shipping (Signature Required)',
             delivery_estimate: {
-              minimum: { unit: 'business_day', value: 5 },
-              maximum: { unit: 'business_day', value: 7 },
+              minimum: { unit: 'business_day', value: 13 },
+              maximum: { unit: 'business_day', value: 17 },
             },
           },
         },
