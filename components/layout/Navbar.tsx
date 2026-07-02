@@ -48,6 +48,14 @@ export default function Navbar() {
           scrolled ? 'shadow-md' : 'shadow-sm'
         }`}
       >
+        {/* Holiday closure announcement bar */}
+        <div className="bg-brand-red text-white text-center px-4 py-2">
+          <p className="font-serif text-[11px] sm:text-xs tracking-wider leading-snug">
+            <span className="uppercase tracking-widest font-semibold">Holiday Notice:</span>{' '}
+            Store closed July 4 – July 13. Orders placed after July 1 will begin processing July 13.
+          </p>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
 

@@ -4,6 +4,7 @@ import { CartProvider } from '@/context/CartContext'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import CartDrawer from '@/components/ui/CartDrawer'
+import ClosureNotice from '@/components/ui/ClosureNotice'
 import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
@@ -33,9 +34,10 @@ export default function RootLayout({
       <body className="antialiased">
         <CartProvider>
           <Navbar />
-          <main className="pt-16">{children}</main>
+          <main className="pt-24">{children}</main>
           <Footer />
           <CartDrawer />
+          <ClosureNotice />
         </CartProvider>
         <Analytics />
       </body>
