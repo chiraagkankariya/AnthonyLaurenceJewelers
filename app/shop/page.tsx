@@ -14,6 +14,8 @@ function getString(val: string | string[] | undefined): string | undefined {
   return Array.isArray(val) ? val[0] : val
 }
 
+export const revalidate = 60
+
 export const metadata = {
   title: 'Shop All Jewelry | Anthony Laurence Jewelers',
   description: 'Browse our full collection of fine jewelry — rings, necklaces, earrings, and bracelets crafted in gold, silver, and platinum.',
