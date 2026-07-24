@@ -4,6 +4,8 @@ import { client, productBySlugQuery } from '@/lib/sanity'
 import type { SanityProduct } from '@/types'
 import ProductDetailClient from '@/components/product/ProductDetailClient'
 
+export const revalidate = 60
+
 interface ProductPageProps {
   params: { slug: string }
 }
