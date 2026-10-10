@@ -23,6 +23,9 @@ const jewelers = [
   'Beacon Jewelers',
   'Raspa Jewelers',
   'Bilori Jewelers',
+  'Diamonds By Dawn',
+  'R. Weiss Fine Jewelers',
+  'The Classic Touch',
 ]
 
 export default function RepairsPage() {
